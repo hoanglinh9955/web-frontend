@@ -1,6 +1,8 @@
-import './globals.css'
+import { HeaderMenuColored } from '@/components/header'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { headerprops, FooterProps } from './fakedata'
+import { FooterLinks } from '@/components/footers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <HeaderMenuColored {...headerprops}/>
+        {children}
+        <FooterLinks {...FooterProps}/>
+      </body>
     </html>
   )
 }
